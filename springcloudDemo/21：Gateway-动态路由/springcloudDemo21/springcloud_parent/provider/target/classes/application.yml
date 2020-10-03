@@ -1,0 +1,12 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: provider  #项目应用名
+eureka:
+  instance:
+    hostname: localhost  #主机名
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka  #连接eureka服务中心

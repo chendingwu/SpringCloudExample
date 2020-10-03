@@ -1,0 +1,14 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: provider  #项目应用名
+eureka:
+  instance:
+    prefer-ip-address: true #是否将自己的ip注册到eureka中；默认为false，注册主机名
+    ip-address: 127.0.0.1  #设置当前实例ip
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}  #修改instance-id显示，设置web控制台显示的实例id，在eureka服务中心的Status栏查看
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  #连接eureka服务中心

@@ -1,0 +1,14 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: provider  #项目应用名
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 3  #每30秒eureka client向eureka server发送心跳包
+    lease-expiration-duration-in-seconds: 9 #如果90秒内eureka server没有收到eureka client的心跳表，则剔除该服务
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  #连接eureka服务中心
+

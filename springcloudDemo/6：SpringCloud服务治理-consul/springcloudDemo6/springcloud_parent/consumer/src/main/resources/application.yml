@@ -1,0 +1,14 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: consumer  #应用名
+
+  cloud:
+    consul:
+      host: localhost  #consul客户端的ip
+      port: 8500 #consul的客户端端口，默认是8500
+      discovery:
+        service-name: ${spring.application.name}  #当前应用注册到consul的名称
+        #prefer-ip-address: true  #注册ip

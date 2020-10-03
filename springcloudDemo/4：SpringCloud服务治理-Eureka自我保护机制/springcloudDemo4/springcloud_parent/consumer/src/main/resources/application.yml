@@ -1,0 +1,11 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: consumer  #项目应用名
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  #连接eureka服务中心
+

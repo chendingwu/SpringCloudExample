@@ -1,0 +1,18 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: consumer  #项目应用名
+eureka:
+  instance:
+    hostname: localhost  #主机名
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka  #连接eureka服务中心
+
+#配置的方式设置Ribbon的负载均衡策略
+provider:  #设置服务提供方的应用名称
+  ribbon:
+    NFloadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule  #设置负载均衡的策略全类名称
+

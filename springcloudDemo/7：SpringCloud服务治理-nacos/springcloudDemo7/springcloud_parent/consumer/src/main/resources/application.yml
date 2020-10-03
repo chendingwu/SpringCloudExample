@@ -1,0 +1,11 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: consumer  #应用名
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #配置nacos服务端地址
